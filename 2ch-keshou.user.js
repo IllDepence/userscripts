@@ -15,10 +15,12 @@ var sp = document.createTextNode('　');
 threadListCntr.insertBefore(sp, threadList[0]);
 
 for (var i=0; i<threadList.length; i++) {
-    threadList[i].style.setProperty('font-size',       '16px')
-    threadList[i].style.setProperty('text-decoration', 'none')
-    threadList[i].style.setProperty('display',         'inline-block')
-    threadList[i].style.setProperty('margin',          '2px')
+    threadList[i].style.setProperty('font-size',       '16px');
+    threadList[i].style.setProperty('text-decoration', 'none');
+    threadList[i].style.setProperty('display',         'inline-block');
+    threadList[i].style.setProperty('margin',          '2px');
+    threadList[i].innerHTML = threadList[i].innerHTML.split("[無断転載禁止]"
+        + "©2ch.net").join("");
 
     if (i<20 && i%2==0) continue; // jump seperated top 10 anchor links
     var br = document.createElement('br');
