@@ -5,8 +5,8 @@
 // @include       *
 // ==/UserScript==
 
-var minFontSize = 16;
-var jPatt = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uffef\u4e00-\u9faf\u3400-\u4dbf]+/g;
+var minFontSize = 22;
+var jPatt = /[\u4e00-\u9fbf]+/g;
 
 /*
  * http://salaciak.blogspot.de/2011/02/javascript-dom-how-to-get-elements.html
