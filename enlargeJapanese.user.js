@@ -48,7 +48,7 @@ function enlargeOnlyInnerMost(elem) {
         // at this point elem is a text node or an empty element
         if(elem.textContent.length <= 1 && elem.nodeType == 1) {
             // an empty element
-            if(elem.hasAttribute('value')) {
+            if(elem.hasAttribute('value') && typeof elem.value === 'string') {
                 if(elem.value.search(jPatt) > -1) {
                     elem.style.fontSize = minFontSize+'px';
                     }
