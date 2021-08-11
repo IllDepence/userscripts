@@ -5,8 +5,8 @@
 // @include       *
 // ==/UserScript==
 
-var minFontSize = 16;
-var jPatt = /[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uffef\u4e00-\u9faf\u3400-\u4dbf]+/g;
+var minFontSize = 22;
+var jPatt = /[\u4e00-\u9fbf]+/g;
 
 /*
  * http://salaciak.blogspot.de/2011/02/javascript-dom-how-to-get-elements.html
@@ -48,7 +48,7 @@ function enlargeOnlyInnerMost(elem) {
         // at this point elem is a text node or an empty element
         if(elem.textContent.length <= 1 && elem.nodeType == 1) {
             // an empty element
-            if(elem.hasAttribute('value')) {
+            if(elem.hasAttribute('value') && typeof elem.value === 'string') {
                 if(elem.value.search(jPatt) > -1) {
                     elem.style.fontSize = minFontSize+'px';
                     }
